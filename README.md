@@ -15,8 +15,9 @@
 <img
   align="right"
   width="300"
-  src="./assets/sleeping_pixel_profile.gif"
+  src="https://raw.githubusercontent.com/davidnose724-design/davidnose724-design/main/sleeping_pixel_profile.gif"
   alt="Pixel character sleeping and yawning"
+/>
 />
 <img
   align="right"
