@@ -16,6 +16,12 @@
   align="right"
   width="300"
   src="./assets/sleeping_pixel_profile.gif"
+  alt="Pixel character sleeping and yawning"
+/>
+<img
+  align="right"
+  width="300"
+  src="./assets/sleeping_pixel_profile.gif"
   alt="Pixel character sleeping"
 />
 
