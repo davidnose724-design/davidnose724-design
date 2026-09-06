@@ -1,0 +1,166 @@
+<svg width="700" height="700" viewBox="0 0 700 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <style>
+      .label {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        fill: #d1d5db;
+      }
+      .ring-label {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        fill: #9ca3af;
+      }
+      .grid {
+        stroke: #6b7280;
+        stroke-width: 1.6;
+        stroke-dasharray: 6 6;
+        opacity: 0.75;
+      }
+      .axis {
+        stroke: #4b5563;
+        stroke-width: 1.4;
+        opacity: 0.75;
+      }
+      .radar-fill {
+        fill: #22c55e;
+        fill-opacity: 0.28;
+        stroke: #22c55e;
+        stroke-width: 4;
+        filter: url(#glow);
+      }
+      .node {
+        fill: #22c55e;
+        filter: url(#glow);
+      }
+      .title {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 26px;
+        font-weight: 700;
+        fill: #f8fafc;
+      }
+      .subtitle {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        fill: #94a3b8;
+      }
+    </style>
+  </defs>
+
+  <!-- background -->
+  <rect x="0" y="0" width="700" height="700" rx="24" fill="#0b1220"/>
+
+  <text x="350" y="48" text-anchor="middle" class="title">Skill Radar // Fun Mode</text>
+  <text x="350" y="72" text-anchor="middle" class="subtitle">Animated profile stats</text>
+
+  <!-- chart group -->
+  <g transform="translate(50,50)">
+    <!-- center = 300,300 -->
+    
+    <!-- rings -->
+    <polygon class="grid" points="300,110 434.4,165.6 490,300 434.4,434.4 300,490 165.6,434.4 110,300 165.6,165.6"/>
+    <polygon class="grid" points="300,157.5 400.8,199.2 442.5,300 400.8,400.8 300,442.5 199.2,400.8 157.5,300 199.2,199.2"/>
+    <polygon class="grid" points="300,205 367.2,232.8 395,300 367.2,367.2 300,395 232.8,367.2 205,300 232.8,232.8"/>
+    <polygon class="grid" points="300,252.5 333.6,266.4 347.5,300 333.6,333.6 300,347.5 266.4,333.6 252.5,300 266.4,266.4"/>
+
+    <!-- axes -->
+    <line class="axis" x1="300" y1="300" x2="300" y2="110"/>
+    <line class="axis" x1="300" y1="300" x2="434.4" y2="165.6"/>
+    <line class="axis" x1="300" y1="300" x2="490" y2="300"/>
+    <line class="axis" x1="300" y1="300" x2="434.4" y2="434.4"/>
+    <line class="axis" x1="300" y1="300" x2="300" y2="490"/>
+    <line class="axis" x1="300" y1="300" x2="165.6" y2="434.4"/>
+    <line class="axis" x1="300" y1="300" x2="110" y2="300"/>
+    <line class="axis" x1="300" y1="300" x2="165.6" y2="165.6"/>
+
+    <!-- ring labels -->
+    <text x="310" y="255" class="ring-label">25</text>
+    <text x="310" y="208" class="ring-label">50</text>
+    <text x="310" y="160" class="ring-label">75</text>
+    <text x="310" y="115" class="ring-label">100</text>
+    <text x="307" y="302" class="ring-label">0</text>
+
+    <!-- outer labels -->
+    <text x="300" y="90" text-anchor="middle" class="label">Python</text>
+    <text x="472" y="150" text-anchor="start" class="label">HTML</text>
+    <text x="510" y="306" text-anchor="start" class="label">C++</text>
+    <text x="470" y="458" text-anchor="start" class="label">Playwright</text>
+    <text x="300" y="525" text-anchor="middle" class="label">Pentesting</text>
+    <text x="125" y="458" text-anchor="end" class="label">Sleeping</text>
+    <text x="88" y="306" text-anchor="end" class="label">Break Things</text>
+    <text x="128" y="150" text-anchor="end" class="label">Fix Things</text>
+
+    <!-- radar polygon -->
+    <polygon class="radar-fill"
+      points="300,300 300,300 300,300 300,300 300,300 300,300 300,300 300,300">
+      <animate
+        attributeName="points"
+        dur="4.2s"
+        repeatCount="indefinite"
+        keyTimes="0;0.45;0.75;1"
+        values="
+          300,300 300,300 300,300 300,300 300,300 300,300 300,300 300,300;
+          300,148 380.6,219.4 357,300 410.2,410.2 300,410.2 165.6,434.4 119.5,300 206,206;
+          300,148 380.6,219.4 357,300 410.2,410.2 300,410.2 165.6,434.4 119.5,300 206,206;
+          300,300 300,300 300,300 300,300 300,300 300,300 300,300 300,300
+        "/>
+    </polygon>
+
+    <!-- animated nodes -->
+    <circle class="node" r="6">
+      <animate attributeName="cx" dur="4.2s" repeatCount="indefinite" values="300;300;300;300"/>
+      <animate attributeName="cy" dur="4.2s" repeatCount="indefinite" values="300;148;148;300"/>
+      <animate attributeName="opacity" dur="4.2s" repeatCount="indefinite" values="0;1;1;0"/>
+    </circle>
+
+    <circle class="node" r="6">
+      <animate attributeName="cx" dur="4.2s" repeatCount="indefinite" values="300;380.6;380.6;300"/>
+      <animate attributeName="cy" dur="4.2s" repeatCount="indefinite" values="300;219.4;219.4;300"/>
+      <animate attributeName="opacity" dur="4.2s" repeatCount="indefinite" values="0;1;1;0"/>
+    </circle>
+
+    <circle class="node" r="6">
+      <animate attributeName="cx" dur="4.2s" repeatCount="indefinite" values="300;357;357;300"/>
+      <animate attributeName="cy" dur="4.2s" repeatCount="indefinite" values="300;300;300;300"/>
+      <animate attributeName="opacity" dur="4.2s" repeatCount="indefinite" values="0;1;1;0"/>
+    </circle>
+
+    <circle class="node" r="6">
+      <animate attributeName="cx" dur="4.2s" repeatCount="indefinite" values="300;410.2;410.2;300"/>
+      <animate attributeName="cy" dur="4.2s" repeatCount="indefinite" values="300;410.2;410.2;300"/>
+      <animate attributeName="opacity" dur="4.2s" repeatCount="indefinite" values="0;1;1;0"/>
+    </circle>
+
+    <circle class="node" r="6">
+      <animate attributeName="cx" dur="4.2s" repeatCount="indefinite" values="300;300;300;300"/>
+      <animate attributeName="cy" dur="4.2s" repeatCount="indefinite" values="300;410.2;410.2;300"/>
+      <animate attributeName="opacity" dur="4.2s" repeatCount="indefinite" values="0;1;1;0"/>
+    </circle>
+
+    <circle class="node" r="6">
+      <animate attributeName="cx" dur="4.2s" repeatCount="indefinite" values="300;165.6;165.6;300"/>
+      <animate attributeName="cy" dur="4.2s" repeatCount="indefinite" values="300;434.4;434.4;300"/>
+      <animate attributeName="opacity" dur="4.2s" repeatCount="indefinite" values="0;1;1;0"/>
+    </circle>
+
+    <circle class="node" r="6">
+      <animate attributeName="cx" dur="4.2s" repeatCount="indefinite" values="300;119.5;119.5;300"/>
+      <animate attributeName="cy" dur="4.2s" repeatCount="indefinite" values="300;300;300;300"/>
+      <animate attributeName="opacity" dur="4.2s" repeatCount="indefinite" values="0;1;1;0"/>
+    </circle>
+
+    <circle class="node" r="6">
+      <animate attributeName="cx" dur="4.2s" repeatCount="indefinite" values="300;206;206;300"/>
+      <animate attributeName="cy" dur="4.2s" repeatCount="indefinite" values="300;206;206;300"/>
+      <animate attributeName="opacity" dur="4.2s" repeatCount="indefinite" values="0;1;1;0"/>
+    </circle>
+  </g>
+</svg>
